@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+
+<script>
+	
+	const texto = prompt("Digite o seu texto");
+	console.log(texto);
+	
+	const textoSemEspaco = texto.replace(/ /g, "");
+	console.log(textoSemEspaco);
+	
+	let tamanho = Math.ceil(Math.sqrt(textoSemEspaco.length));
+	
+	const array = [];
+	let inicio = 0;
+	let final = tamanho;
+	for (let a = 0; a < tamanho; a++) {
+		array.push(textoSemEspaco.substring(inicio, final));
+		inicio += tamanho;
+		final += tamanho;
+
+	}
+
+	console.log(array);
+	let textoSaida = "";
+	for (let a = 0; a < array.length; a++) {
+		for (let b = 0; b < array.length; b++) {
+			if(array[b][a] != undefined) {
+				textoSaida += array[b][a];
+			}
+
+		}
+		textoSaida += " ";
+
+	}
+
+	textoSaida = textoSaida.trim();
+	console.log(textoSaida);
+
+
+
+
+
+
+
+</script>
